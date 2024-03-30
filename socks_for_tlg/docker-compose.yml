@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  socks_for_tlg:
+    image: mickmaloletkin/socks_for_tlg:0.1
+    ports:
+      - "10888:10888"
+    volumes:
+      - ./danted.conf:/etc/danted.conf
+    restart: unless-stopped
+    networks:
+      - dante_nginx
+
+networks:
+  dante_nginx:
+    driver: bridge

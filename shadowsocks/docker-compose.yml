@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  shadowsocks:
+    image: mickmaloletkin/shadowsocks:latest
+    ports:
+      - "${SS_PORT}:${SS_PORT}"
+    environment:
+      - SS_SERVER=${SS_SERVER}
+      - SS_PORT=${SS_PORT}
+      - SS_PASSWORD=${SS_PASSWORD}
+      - SS_METHOD=${SS_METHOD}

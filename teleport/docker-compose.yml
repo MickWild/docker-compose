@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  teleport:
+    image: mickmaloletkin/teleport:15.1.8
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3022:3022"
+      - "3023:3023"
+      - "3024:3024"
+      - "3025:3025"
+      - "3026:3026"
+    volumes:
+      - ./teleport.yaml:/etc/teleport/teleport.yaml
+    restart: unless-stopped
